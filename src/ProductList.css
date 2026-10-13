@@ -1,0 +1,74 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  background: var(--leaf-dark);
+  color: #fff;
+}
+
+.brand { color: #fff; text-decoration: none; display: flex; flex-direction: column; }
+.brand-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+.brand-sub { font-size: 0.8rem; opacity: 0.8; }
+
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; font-weight: 600; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a[aria-current='page'] { border-bottom-color: var(--sun); }
+
+.cart-link { position: relative; display: inline-flex; }
+.cart-count {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-30%);
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--soil);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plant-sections { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem 4rem; }
+.category-title { margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--moss); font-size: 1.8rem; color: var(--leaf-dark); }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.5rem; }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3eadf;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.product-image { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; }
+.product-title { margin: 0.8rem 0 0.3rem; font-size: 1.15rem; }
+.product-description { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.4; flex: 1; }
+.product-price { margin: 0 0 0.8rem; font-weight: 700; font-size: 1.1rem; color: var(--leaf); }
+
+.product-button {
+  background: var(--leaf);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.product-button:hover:not(:disabled) { background: var(--leaf-dark); }
+.product-button:disabled { background: #b9c4bc; cursor: not-allowed; }
+
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; gap: 0.6rem; padding: 0.8rem 1rem; }
+  .nav-links { gap: 1.2rem; }
+  .plant-sections { padding: 1rem; }
+}
